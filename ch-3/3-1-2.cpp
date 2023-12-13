@@ -51,6 +51,9 @@ public:
         cout << "\nSim Card Validity : " << cust_simcard_validity << " Years";
         cout << "\nTelecome Brand : " << cust_telecom_brand_name;
         cout << endl;
+        cout << endl;
+        cout << ":------------------------------------------:";
+        cout << endl;
     }
 };
 
