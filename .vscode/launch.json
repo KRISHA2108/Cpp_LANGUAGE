@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/KRISHA/C++/pr-1",
-      "program": "c:/KRISHA/C++/pr-1/build/Debug/outDebug",
+      "cwd": "c:/KRISHA/C++/pr-3",
+      "program": "c:/KRISHA/C++/pr-3/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
