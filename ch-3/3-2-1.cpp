@@ -5,7 +5,7 @@ using namespace std;
 class Hotel
 {
 
-    public:
+
 
     int hotel_id;
     static char hotel_name[20];
@@ -14,52 +14,69 @@ class Hotel
     char hotel_location[20]; 
     int hotel_establish_year;
     int hotel_staff_quantity;
-    char hotel_room_quantity[20];
-};
+    int hotel_room_quantity;
 
-char  Hotel::hotel_name[20] ="ABC";
-
-int main()
-{
-    int n,i;
-    Hotel h[n];
-    
-
-    cout << "Enter Number of Hotels" << endl;
-    cin >> n;
-
-    for (int i = 0; i < n; i++)
+    public:
+    void set_hotel_data()
     {
-  
-        cout << "Enter Hotel ID: ";
-        cin >> h[i].hotel_id;
+        cout << endl << "Enter Hotel ID: ";
+        cin >> hotel_id;      
         fflush(stdin);
-        cout << "Enter Hotel Type: ";
-        gets(h[i].hotel_type);
-        cout << "Enter Hotel Rating: ";
-        cin >> h[i].hotel_rating;
+        cout << "Enter Hotel Type Hotel & Motel: ";
+        gets(hotel_type);
+        cout << "Enter Rating (1-7): ";
+        cin >> hotel_rating;
          fflush(stdin);
         cout << "Enter Location: ";
-        gets(h[i].hotel_location);
+        gets(hotel_location);
         cout << "Year Established: ";
-        cin >> h[i].hotel_establish_year;
-        cout << "Number of Staff: ";
-        cin >> h[i].hotel_staff_quantity;
+        cin >> hotel_establish_year;
+        fflush(stdin);
+        cout << "Number of Staff Members: ";
+        cin >>hotel_staff_quantity;
         fflush(stdin);
         cout << "Room Quantity: ";
-        gets(h[i].hotel_room_quantity);
+        cin >>hotel_room_quantity;
     }
-    cout <<"Displaying the details of all hotels." << endl;
-    cout << "ID : " << h[i].hotel_id << endl;
-    cout << "Name : " << h[i].hotel_name << endl;
-    cout << "Type : " << h[i].hotel_type << endl;
-    cout << "Rating : " << h[i].hotel_rating << endl;
-    cout << "Location : " << h[i].hotel_location << endl;
-    cout << "Established Year : " << h[i].hotel_establish_year<<endl;
-    cout << "Staff Quantity : " << h[i].hotel_staff_quantity << endl;
-    cout << "Rooms Available : " << h[i].hotel_room_quantity << endl;
 
+    void get_hotel_data()
+    {
+        cout << endl <<"----:HOTEL DATA:----"<< endl;
+        cout <<"Displaying the details of all hotels." << endl << endl;
+        cout << "ID : " << hotel_id << endl;
+        cout << "Name : " << hotel_name << endl;
+        cout << "Type : " << hotel_type << endl;
+        cout << "Rating : " << hotel_rating << endl;
+        cout << "Location : " << hotel_location << endl;
+        cout << "Established Year : " << hotel_establish_year<<endl;
+        cout << "Staff Quantity : " << hotel_staff_quantity << endl;
+        cout << "Rooms Available : " << hotel_room_quantity << endl;
+
+    }
+  
+};     
+
+char Hotel::hotel_name[20] = "Hotel XYZ";
+int main()
+{
+    int n;
+    
+    cout << "Enter Hotel Numbers:";
+    cin >> n;
+    
+     Hotel h[n];
+    
+    for(int i=0;i<n;i++)
+    {
+        h[i].set_hotel_data();
+    }
+    
+    for(int i=0;i<n;i++)
+    {
+        h[i].get_hotel_data();
+    }
+    
     return 0;
+}
 
     
-}

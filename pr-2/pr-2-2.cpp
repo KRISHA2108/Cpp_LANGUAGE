@@ -67,7 +67,7 @@ public:
         }
         else
         {
-            cout << "Enter" << endl;
+            cout << "Item is not valid" << endl;
         }
 
         if (a == 11 && b == 6)
@@ -77,7 +77,7 @@ public:
         }
         else
         {
-            cout << "Enter" << endl;
+            cout << "Item is not valid" << endl;
         }
     }
 
