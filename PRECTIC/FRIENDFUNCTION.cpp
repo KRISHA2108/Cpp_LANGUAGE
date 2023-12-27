@@ -22,7 +22,7 @@ void vinisha()
     cout << "\nkrisha course: " << k1.course;
     strcpy(course,k1.course);
 
-    cout << "\nMoney in the wallet of Vinisha is : Rs."<<k1.money ;
+    cout << "\nMoney in the Wallet Of Vinisha is : Rs."<<k1.money ;
     cout << "\nVinisha course: " << k1.course;
 }
 
