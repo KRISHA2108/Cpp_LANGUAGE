@@ -15,8 +15,10 @@ class RBI
     {
         cout << "Enter your Investment:";
         cin >> put;
+        cout << endl;
+
+        cout << "----:YOUR DATA:----" << endl << endl;
     }
-    
 };
 
 class SBI : public RBI
@@ -26,8 +28,8 @@ class SBI : public RBI
     void getRoi()
     {
         get=((float)ROI/100)*put;
-        cout << "Profit :" << get;
-        cout << "Total :" << get+put;
+        cout << "PROFIT\t:" << get << endl;
+        cout << "TOTAL\t:" << get + put << endl;
     }
 };
 
@@ -38,8 +40,8 @@ class BOB : public RBI
     void getRoi()
     {
         get=((float)ROI/100)*put;
-        cout << "Profit :" << get;
-        cout << "Total :" << get+put;
+        cout << "PROFIT\t:" << get<< endl;
+        cout << "TOTAL\t:" << get + put << endl;
     }
 };
 
@@ -50,8 +52,8 @@ class ICICI : public RBI
     void getRoi()
     {
         get=((float)ROI/100)*put;
-        cout << "Profit :" << get;
-        cout << "Total :" << get+put;
+        cout << "PROFIT\t:" << get << endl;
+        cout << "TOTAL\t:" << get + put << endl;
     }
 };
 int main()
@@ -60,10 +62,16 @@ int main()
     BOB b1;
     ICICI i1;
     int str;
+
+
     
-    cout << "Enter your bank name(like 1,2 and 3):" << endl << "\t1) SBI" << endl << "\t2) BOB" << endl << "\t3) ICICI";
-    cin >> str;
-    
+    cout << "Enter your bank name(like 1,2 and 3)"
+        << endl << "\t1) SBI" 
+        << endl << "\t2) BOB" 
+        << endl << "\t3) ICICI" << endl;
+    cin >> str ;
+    cout << endl;
+
     if(str==1)
     {
         s1.input();
@@ -81,7 +89,7 @@ int main()
     }
     else
     {
-        cout << "invalid input";
+        cout << "----:invalid input:----";
     }
     
     return 0;
