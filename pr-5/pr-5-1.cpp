@@ -1,21 +1,25 @@
 #include<iostream>
 using namespace std;
 
-int main()
+class Exception 
 {
-    int a,b;
-    string e="ERROR";
+    double a,b;
+    string e = "ERROR";
+    public:
+    Exception()
+    {
 
     cout << "Enter the value of A:";
     cin >> a;
     cout << "Enter the value of B:";
     cin >> b;
+    cout << endl;
 
     try
         {
             if(b==0 || a==0)
             {
-                throw e;
+                throw a;
             }
             else
             {
@@ -37,7 +41,13 @@ int main()
             catch(...)
             {
                 cout << "General Exception" ;
-            }
+            }   
+    }
+};
+
+int main()
+{
+    Exception e1;
     
     return 0;
 }

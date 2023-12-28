@@ -1,34 +1,55 @@
 #include <iostream>
-#include <string.h>
+#include<string.h>
 using namespace std;
 
 class Admin
 {
-    protected :
-            char company_name[20];
-            int manager_salary;
-            int employee_salary;
-            int total_staff;
-            int total_annual_revenue;
+    private:
+        int total_annual_revenue;
+    protected:
+        int manager_salary;
+        int total_staff;
+    public:
+         int employee_salary;
+         char company_name[20];
+
 };
 
-class Manager : public Admin
+class Manager : private Admin 
 {
-    void setdata()
+    void MyAcess()
     {
-        cout << "Enter the name of your company: ";
-        gets(company_name);
-        cout << "Enter the salary of the manager: ";
         cin >> manager_salary;
-        cout << "Enter the salary of the employee:";
-        cin >> employee_salary;
-        cout << "Enter the company total staff:";
         cin >> total_staff;
-        cout << "Enter the company total annual revenue:";
-        cin >> total_annual_revenue;
+    }
+    
+    public:
+        int emp_salary;
+        char cmp_name[20];
+
+    void Manager1()
+    {
+        cout << "Enter employee salary:";
+        cin >> employee_salary;
+        
+        cout << "Enter company name:";
+        cin >> company_name;
+    }
+}; 
+
+class Employee : public Manager
+{
+    void MyAcess()
+    {
+        cin >> emp_salary;
+        cin >> cmp_name;
     }
 };
-class Employee : public Admin  
+
+int main()
 {
-    
-};
+    Manager m1;
+    Employee e1;
+
+    m1.Manager1();
+}

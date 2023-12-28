@@ -14,7 +14,7 @@ class B : public A
     int  b;
     void setBdata()
     {
-         cout << "Enter the value for 'A': ";
+        cout << "Enter the value for 'A': ";
         cin >> a;
         cout << "Enter the value for 'B': ";
         cin >> b;
