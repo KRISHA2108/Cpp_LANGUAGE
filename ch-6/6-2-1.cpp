@@ -2,7 +2,7 @@
 #include<string.h>
 using namespace std;
 
-class metemetical
+class opretion
 {
     private:
 

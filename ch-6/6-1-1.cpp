@@ -4,64 +4,78 @@ using namespace std;
 
 class Admin
 {
+    private:
+    int total_annual_revenue;
     protected:
-    char company_name[20];
+    string company_name;
     int manager_salary;
     int employee_salary;
     int total_staff;
-    int total_annual_revenue;
+public:
+    void setcompData()
+    {
+        cout << "Enter company Name:";
+        cin >> company_name;
+        cout << "\nEnter Manager Salary:";
+        cin >> manager_salary;
+        cout << "Enter Employee Salary: ";
+        cin >> employee_salary;
+        cout << "Enter the company total staff:";
+        cin >> total_staff;
+        cout << "Enter the total annual revenue:";
+        cin >> total_annual_revenue;
+    }
+
+    void getcompdata()
+    {
+        cout << "----:ADMIN DATA:----"<< endl;
+        cout << "\nCompany name:" << company_name << endl;
+        cout << "\nManager Salary:" << manager_salary << endl;
+        cout << "\nEmployee Salary:" << employee_salary << endl;
+        cout << "\nTotal Staff:" << total_staff << endl;
+        cout << "\nAnnual Revenue:" << total_annual_revenue << endl << endl;
+    }
 };
 
-class Manager : private Admin
+class Manager : public Admin
 {
-    void MyAcess()
-    {
-        cin >> manager_salary;
-        cin >> total_staff;
-    }
 
 public:
-    int emp_salary;
-    char cmp_name[20];
-
-    void Manager1()
+    void getDataManager()
     {
-        cout << "Enter Employee Salary:";
-        cin >> employee_salary;
-        fflush(stdin);
-        cout << "Enter Company Name:";
-        gets(this->company_name);
+        cout << "----:MANAGER DATA:----"<< endl;
+        cout << "\nCompany name:" << company_name << endl;
+        cout << "\nManager Salary:" << manager_salary << endl;
+        cout << "\nEmployee Salary:" << employee_salary << endl;
+        cout << "\nTotal Staff:" << total_staff << endl;
+
+        manager_salary = 0;
+        total_staff = 0;
     }
+
 };
 
 class Employee : public Manager
 {
-    void MyAcess()
-    {
-        cin >> emp_salary;
-        cin >> cmp_name;
-    }
-
     public:
-    int emp_salary;
-    char cmp_name[20];
-
-    void employee()
-    {
-        
-        cout << "Enter Employee Salary:";
-        cin >> emp_salary;
-        fflush(stdin);
-        cout << "Enter Company Name:";
-        gets(this->cmp_name);;
-    }
+   void myAccess()
+   {
+    cout << endl;
+     cout << "----:EMPLOYEE DATA:----"<< endl;
+     cout << "\nEmployee Salary:" << employee_salary << endl;
+      cout << "\nCompany name:" << Admin                                                                                                                                                                                                                                ::company_name << endl;
+   }
 };
 
 int main()
 {
-    Manager m1;
+   
     Employee e1;
 
-    m1.Manager1();
-    e1.employee();
+    e1.setcompData();
+    e1.getcompdata();
+
+    e1.getDataManager();
+
+    e1.myAccess();
 }
