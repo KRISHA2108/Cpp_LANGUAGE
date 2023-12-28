@@ -2,12 +2,12 @@
 #include<string.h>
 using namespace std;
 
-class Message
+class mes
 {
     private:
-    char s[20]="String";
+    char s[20]="string";
     public:
-    Message()
+    mes()
     {
         char s2[20]; 
     }
@@ -21,12 +21,12 @@ class Message
     void print(char s1[20])
     {
         int a,b;
-        char ns[a+b];
+        
         a=strlen(s);
         b=strlen(s1);
 
-        cout << "---";
-        
+        char ns[a+b];
+
         for(int i=0;i<a+b;i++)
         {
             ns[i]=s[i];
@@ -37,17 +37,17 @@ class Message
             ns[a+i]=s1[i];
         }
 
-       cout << endl << "Marge String :" << ns ;
+        cout << endl << "Marge String :" << ns ;
     }
 };
 
 int main()
 {
-    Message m;
+    mes m;
     char n[20];
     char s1[20];
-    cout << "Enter Any String:";
-    cin >> s1;
+    cout << "Enter any String:";
+    gets(s1);
     m.print(s1);
 
     return 0;

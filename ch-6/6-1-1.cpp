@@ -1,41 +1,38 @@
 #include <iostream>
-#include<string.h>
+#include <string.h>
 using namespace std;
 
 class Admin
 {
-    private:
-        int total_annual_revenue;
     protected:
-        int manager_salary;
-        int total_staff;
-    public:
-         int employee_salary;
-         char company_name[20];
-
+    char company_name[20];
+    int manager_salary;
+    int employee_salary;
+    int total_staff;
+    int total_annual_revenue;
 };
 
-class Manager : private Admin 
+class Manager : private Admin
 {
     void MyAcess()
     {
         cin >> manager_salary;
         cin >> total_staff;
     }
-    
-    public:
-        int emp_salary;
-        char cmp_name[20];
+
+public:
+    int emp_salary;
+    char cmp_name[20];
 
     void Manager1()
     {
-        cout << "Enter employee salary:";
+        cout << "Enter Employee Salary:";
         cin >> employee_salary;
-        
-        cout << "Enter company name:";
-        cin >> company_name;
+        fflush(stdin);
+        cout << "Enter Company Name:";
+        gets(this->company_name);
     }
-}; 
+};
 
 class Employee : public Manager
 {
@@ -43,6 +40,20 @@ class Employee : public Manager
     {
         cin >> emp_salary;
         cin >> cmp_name;
+    }
+
+    public:
+    int emp_salary;
+    char cmp_name[20];
+
+    void employee()
+    {
+        
+        cout << "Enter Employee Salary:";
+        cin >> emp_salary;
+        fflush(stdin);
+        cout << "Enter Company Name:";
+        gets(this->cmp_name);;
     }
 };
 
@@ -52,4 +63,5 @@ int main()
     Employee e1;
 
     m1.Manager1();
+    e1.employee();
 }
